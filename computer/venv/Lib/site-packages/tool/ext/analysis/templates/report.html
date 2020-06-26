@@ -1,0 +1,25 @@
+<h1>Data Analysis and Reporting Kit</h1>
+
+<form action="." method="POST">
+    {% for field in form %}
+        <p>{{ field.label }} {{ field }}</p>
+    {% endfor %}
+    <input type="submit"/>
+</form>
+
+<h2>Results</h2>
+
+<table style="border-collapse: collapse;">
+{% for row in table %}
+    <tr>
+        {% for cell in row %}
+            <td style="border:1px solid gray;">{{ cell }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+
+<p><strong>TODO:</strong> 
+    choose document from those registered with admin; 
+    if it defines structure, replace textboxes with checkboxes;
+    suggest structure if it is unknown.</p>

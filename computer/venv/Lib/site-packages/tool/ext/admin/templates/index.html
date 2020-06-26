@@ -1,0 +1,23 @@
+{% extends "admin/_base.html" %}
+{% block content %}
+
+{% for namespace, models in namespaces.items() %}
+    <div style="float: left; width: 20ex; margin-right: 2ex; padding: 0 2ex 1em 2ex; border: 1px solid
+    #eee;">
+        <h2>&ldquo;{{ namespace.capitalize() }}&rdquo;</h2>
+        <ul>
+        {% for name, model in models.items() %}
+            <li><a href="{{ url_for('tool.ext.admin.views.object_list', 
+                                    namespace=namespace, model_name=name)}}">
+                {{ model.__name__ }}</a>&nbsp;<a href="{{ url_for('tool.ext.admin.views.object_detail',
+                                                                  namespace=namespace,
+                                                                  model_name=name) }}">+</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
+

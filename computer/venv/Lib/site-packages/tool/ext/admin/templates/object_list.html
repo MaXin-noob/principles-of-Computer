@@ -1,0 +1,118 @@
+{% extends "admin/_base.html" %}
+
+{#% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{{ url_for('tool.ext.admin.index') }}">Admin site</a>
+        &rarr;
+        <a href="{{ url_for('tool.ext.admin.namespace', namespace=namespace)
+        }}">{{ namespace.capitalize() }}</a>
+    </div>
+{% endblock %}
+
+{% block title %}
+    {{ query.model.meta.label_plural.capitalize() }} admin
+{% endblock %}
+
+{% block heading %}
+    Choose {{ query.model.meta.label }} to change
+{% endblock heading %#}
+
+{% block content %}
+
+    <p style="float: right;">
+        <a href="{{ url_for('tool.ext.admin.views.object_detail',
+                            namespace=namespace,
+                            model_name=query.doc_class.__name__) }}">Add {{ query.doc_class.meta.get_label() }}</a>
+    </p>
+
+    <p>{{ query.count() }} {{ query.doc_class.meta.get_label_plural() }}</p>
+
+  <div class="pagination" style="overflow: hidden;">
+    <div style="float: left">
+    {%- if pagination.has_previous %}
+        <a href="{{ pagination.first }}">First</a>
+        <a href="{{ pagination.previous }}">&laquo; Previous</a>
+    {%- else %}
+        <span class="inactive">&laquo; Previous</span>
+    {% endif %}
+    </div>
+    
+    <div style="float: left"> 
+    <form action="">
+        <input type="text" name="page" value="{{ pagination.page }}" style="width:4ex; text-align: center;" />
+        <input type="submit" value="go" />
+    </form>
+    </div>
+    
+    <div style="float: left">
+    {% if pagination.has_next %}
+        <a href="{{ pagination.next }}">Next &raquo;</a>
+        <a href="{{ pagination.last }}">Last</a>
+    {%- else %}
+        <span class="inactive">Next &raquo;</span>
+    {% endif %}
+    </div>
+  </div>
+
+    {% if search_enabled %}
+    <div>
+    <form action="." method="GET">
+        <input type="text" name="q" value=""/>
+        <input type="submit" value="Search"/>
+    </form>
+    </div>
+    {% endif %}
+
+    <table style="width:100%">
+        <tr>
+            {# TODO: make a simple table manager to handle all this stuff in Python #}
+            {% for list_name in list_names %}
+                {% if list_name == '__unicode__' %}
+                    <th>{{ query.doc_class.meta.get_label().capitalize() }}</th>
+                {% else %}
+                    <th>
+                        {# TODO: remove the hacks, implement sorting properly #}
+                        {% if request.values.sort_by == list_name %}
+                            <a href="?sort_by={{ list_name
+                            }}&amp;sort_reverse={{ 0 if request.values.get('sort_reverse') else 1 }}">&uarr;
+                        {% else %}
+                            <a href="?sort_by={{ list_name }}&amp;sort_reverse=0">&darr;
+                        {% endif %}
+                            {{ query.doc_class.meta.labels.get(list_name) or list_name }}
+                        </a>
+                    </th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% set row_class = cycler('odd', 'even') %}
+        {% for object in pagination.entries %}
+        <tr class="{{ row_class.next() }}">
+            {% for list_name in list_names %}
+                <td>
+                {% if loop.first %}
+                    <a href="{{ url_for('tool.ext.admin.views.object_detail',
+                                        namespace=namespace, 
+                                        model_name=query.doc_class.__name__, 
+                                        pk=object.pk) }}">
+                {% endif %}
+                {% if list_name == '__unicode__' %}
+                    {{ object }}
+                {% else %}
+                    {% if object|attr(list_name) is none %}
+                        <span class="missing">missing</span>
+                    {% elif object|attr(list_name) == '' %}
+                        <span class="empty">empty</span>
+                    {% else %}
+                        {{ object|attr(list_name)|escape }}
+                    {% endif %}
+                {% endif %}
+                {% if loop.first %}
+                    </a>
+                {% endif %}
+                </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "admin/_base.html" %}
+
+{% block content %}
+
+{% for name, model in models.items() %}
+    <ul>
+        <li><a href="{{ url_for('tool.ext.admin.views.object_list', namespace=namespace, model_name=name) }}">{{ model.__name__ }}</a></li>
+    </ul>
+{% endfor %}
+
+{% endblock %}
+

@@ -1,0 +1,118 @@
+{% extends "admin/_base.html" %}
+
+{#% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{{ url_for('tool.ext.admin.index') }}">Admin site</a>
+        &rarr;
+        <a href="{{ url_for('tool.ext.admin.namespace', namespace=namespace) }}">{{ namespace.capitalize() }}</a>
+        &rarr;
+        <a href="{{ url_for('tool.ext.admin.object_list',
+                            namespace=namespace,
+                            model_name=object.__class__.__name__) }}">{{ object.meta.label.capitalize() }}s</a>
+    </div>
+{% endblock %}
+
+{% block title %}
+    {% if object.pk %}Edit{% else %}Add{% endif %} {{ object.meta.label}}
+{% endblock %}
+
+{% block heading %}
+    {% if object.pk %}Edit{% else %}Add{% endif %} {{ object.meta.label}}
+{% endblock heading %#}
+
+{% block content %}
+
+<style type="text/css">
+    table {width:100%; border: none}
+    table th {
+        width: 20ex; vertical-align:top; background: none; padding-top: 1em}
+    table th, table td {
+        border:none; border-bottom: 1px solid #ddd;}
+    label {display:block;}
+    input[type=text],
+    textarea         {width:100%; border: 1px solid #bbb;
+                      -webkit-border-radius: 2px}
+    ul.errors { color: red }
+</style>
+
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+{% if object_url %}
+    <p><a href="{{ object_url }}">view on website</a></p>
+{% endif %}
+
+<form action="" method="POST">
+    <table>
+    {% for field in form %}
+        <tr>
+            <th {% if field.flags.required %}style="font-weight: bold;"{% endif
+            %}>{{ field.label }}</th>
+            <td>
+                {% if field.errors %}
+                    <ul class="errors">
+                    {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                
+                {{ field }}
+                
+                {% if field.queryset %}
+                    {% if field.name in form.data and form.data[field.name] %}
+                        <a href="{{ url_for('tool.ext.admin.views.object_detail',
+                                    namespace=namespace,
+                                    model_name=form.data[field.name].__class__.__name__,
+                                    pk=form.data[field.name].pk) }}">go to...</a>
+                    {% endif %}
+                    <!-- TODO: check if the model is registered, somehow get
+                               its namespace and then the URL -->
+                    <!-- TODO: use the JavaScript thingy as in Django, see
+                               /admin-media/js/admin/RelatedObjectLookups.js -->
+                    <a href="{{ url_for('tool.ext.admin.views.object_detail',
+                                        namespace=namespace,
+                                        model_name=field.queryset.doc_class.__name__) 
+                             }}">add another...</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <input type="submit" name="SAVE" value="Save" style="font-size: 1.5em;"/>
+    <input type="submit" name="DELETE" value="Delete"/>
+</form>
+
+<div>
+    <h2>Open as…</h2>
+
+    {% for ns, types in other_doc_types.iteritems() %}
+        <p>{{ ns }}: 
+        {% for doc_type in types %}
+            <a href="{{ url_for('tool.ext.admin.views.object_detail', namespace=ns,
+                                model_name=doc_type, pk=object.pk) }}">{{ doc_type }}</a>
+        {% endfor %}
+        </p>
+    {% endfor %}
+</div>
+
+{% for model, attrs in references.iteritems() %}
+    <div style="padding: 1em 2ex; background: #eee;">
+        <h2>{{ model.meta.label_plural.capitalize() }}</h2>
+        {% for attr_name, ref_objects in attrs.iteritems() %}
+            <ul>
+            {% for ref_obj in ref_objects %}
+                <li><a href="{{ url_for('tool.ext.admin.views.object_detail',
+                                        namespace=namespace,
+                                        model_name=model.__name__,
+                                        pk=ref_obj.pk) }}">{{ ref_obj }}</a>
+                    (as {{ attr_name }})</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+{% endblock %}
