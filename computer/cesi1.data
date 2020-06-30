@@ -8,7 +8,7 @@ nop
 add R3,£¨R4£©
 sub R5,R6
 inc  @£¨R3£©+
-add  R7£¬£¨R6£©+
+add  R7,£¨R6£©+
 nop
 ld R1,05
 ld R2,04

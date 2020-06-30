@@ -1,28 +1,15 @@
 #!/usr/bin/env python 
 # -*- coding: utf-8 -*-
 # @File : tool.py
-# @Project : 计算机模拟机
+# @Project : computer
 # @Software: PyCharm
 # @Author : 大红昕
 # @Time : 2020/6/14 11:51
-note = {
-    "ADD": "0000 1100",
-    "SUB": "0000 1000",
-    "LDI": "1110"
-}
+
 
 
 class ToolFunction:
     def __init__(self):
-        pass
-
-    @staticmethod
-    def compile(instruction):
-        """
-        将汇编代码编译成机器码
-        :param instruction: 分离后的汇编代码
-        :return: 机器码
-        """
         pass
 
     @staticmethod
@@ -36,10 +23,9 @@ class ToolFunction:
         line = line.upper()
         space = line.find(" ")
         if space == -1:
-            context.append("nop")
+            context.append("NOP")
             return context
-        order = line[:space]
-        context.append(order.strip())
+        context.append(line[:space].strip())
         data = line[space:]
         comma = data.find(",")
         if comma == -1:
@@ -55,13 +41,14 @@ class ToolFunction:
     def readFile(fileName):
         """
         :param fileName: 汇编指令代码文件
-        :return: 每一行行号以及汇编代码构建成的字典
+        :return: 包含汇编代码的列表
         """
-        context = dict()
+        context = list()
         try:
             with open(fileName, mode="r", encoding="ANSI") as f:
-                for num, line in enumerate(f.readlines()):
-                    context[hex(num + 1)] = line.strip()
+                for line in f.readlines():
+                    if line.strip():
+                        context.append(line.strip("\n"))
         except FileNotFoundError:
             print("请检查文件路径已经文件扩展名是否正确！")
         else:
