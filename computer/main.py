@@ -83,5 +83,5 @@ class CPU(Hardware):
                 continue
         return context_
 
-    def PLA(self):
-        print("PLA")
+    # def PLA(self):
+    #     print("PLA")
