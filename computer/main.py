@@ -11,36 +11,13 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QTableWidgetItem
 import Interface
 import re
-
-
-# 底层硬件
-class Hardware:
-    def __init__(self):
-        # 通用寄存器
-        self.R0 = 0x0000
-        self.R1 = 0x0000
-        self.R2 = 0x0000
-        self.R3 = 0x0000
-        self.R4 = 0x0000
-        self.R5 = 0x0000
-        self.R6 = 0x0000
-        self.R7 = 0x0000
-        # 特殊寄存器
-        self.PC = 0x0000  # 程序计数器
-        self.BUS = 0x0000  # 数据总线
-        self.SR = 0x0000  # 源操作数寄存器
-        self.DR = 0x0000  # 目的操作数寄存器
-        self.MAR = 0x0000
-        self.MDR = 0x0000
-        self.IMAR = 0x0000
-        self.IMDR = 0x0000
-        # 控制存储器
-        self.control_memory = {}
+from hardware import Hardware
 
 
 class CPU(Hardware):
     def __init__(self):
         super().__init__()
+        # 指令集
         self.instruction_set = {
             "ADD": "000100000ddd0sss",
             "SUB": "001000000ddd0sss",
@@ -56,9 +33,24 @@ class CPU(Hardware):
             "LD": "1001000000001ddd",
             "NOP": "0000000000000000",
         }
+        # 控存
         self.control_memory = {
-            "0": "",
-            "1":""
+            "000": {
+                "micros": "000101110000000001101",
+                "micro-order": "PC->BUS,BUS->MAR,READ,CLEAR LA,1->C0,ADD,ALU->LT"
+            },
+            "001": {
+                "micros": "001100100000000000010",
+                "micro-order": "LT->BUS,BUS->PC,WAIT"
+            },
+            "002": {
+                "micros": "00100100000000000000",
+                "micro-order": "MDR->BUS,BUS->IR"
+            },
+            "100": {
+                "micros": "00000000000000000000",
+                "micro-order": ""
+            }
         }
         self.PC = 4096
 
@@ -71,10 +63,7 @@ class CPU(Hardware):
         context_ = list()
         for value in assembly_code:
             context = ToolFunction.analyze(value)
-            code = self.instruction_set.get(context[0])
-            if len(context) == 1:
-                context_.append(code)
-                continue
+            code = self.instruction_set.get(context[0])  # 从指令集中找对应的指令
             if len(context) == 3:
                 if context[0] == "LDI":
                     code = code.replace("ddd", "{:0>3b}".format(int(context[1][context[1].find("R") + 1])))
@@ -89,4 +78,10 @@ class CPU(Hardware):
                 code = code.replace("ddd", "{:0>3b}".format(int(context[1][context[1].find("R") + 1])))
                 context_.append(code)
                 continue
+            if len(context) == 1:
+                context_.append(code)
+                continue
         return context_
+
+    def PLA(self):
+        print("PLA")

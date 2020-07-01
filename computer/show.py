@@ -18,6 +18,7 @@ class MyWindow(QMainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
         self.assembly_code = []
+        self.machine_code = []
         self.computer = main.CPU()
         self.ui = Interface.Ui_MainWindow()
         self.ui.setupUi(self)
@@ -31,8 +32,8 @@ class MyWindow(QMainWindow):
         if self.assembly_code:
             for line in self.assembly_code:
                 self.ui.listWidget.addItem(line)
-            machine_code = self.computer.compile(self.assembly_code)
-            for key, value in enumerate(machine_code):
+            self.machine_code = self.computer.compile(self.assembly_code)
+            for key, value in enumerate(self.machine_code):
                 for i in range(0, len(value), 4):
                     s += value[i:i + 4]
                     s += " "
