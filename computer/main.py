@@ -135,7 +135,6 @@ class CPU(Hardware):
         """
         找到 machine_code 对应的微指令入口
         :param machine_code: 机器码
-        :param assembly_code: 分解后的汇编代码
         :return:
         """
         entrance_code = ""
@@ -152,7 +151,6 @@ class CPU(Hardware):
         """
         执行一条机器码
         :param machine_code: 机器码
-        :param assembly_code: 分解后的汇编代码
         :return: 微操作序列
         """
         note = []
