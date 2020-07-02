@@ -383,6 +383,8 @@ class Ui_MainWindow(object):
         self.listWidget_3 = QtWidgets.QListWidget(self.centralwidget)
         self.listWidget_3.setMinimumSize(QtCore.QSize(501, 381))
         self.listWidget_3.setMaximumSize(QtCore.QSize(501, 381))
+        self.listWidget_3.setStyleSheet("font: italic 12pt \"Arial\";\n"
+"font: 14pt \"Arial\";")
         self.listWidget_3.setObjectName("listWidget_3")
         self.verticalLayout_13.addWidget(self.listWidget_3)
         self.verticalLayout_14.addLayout(self.verticalLayout_13)

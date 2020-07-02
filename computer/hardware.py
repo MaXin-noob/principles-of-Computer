@@ -10,7 +10,7 @@ from abc import ABCMeta, abstractmethod
 
 
 # 底层硬件
-class Hardware():
+class Hardware(metaclass=ABCMeta):
     def __init__(self):
         # 通用寄存器
         self.R0 = 0x0000
@@ -33,6 +33,7 @@ class Hardware():
         # 控制存储器
         self.control_memory = {}
 
+    @abstractmethod
     def PLA(self):
         """
         译码器,须在子类实现

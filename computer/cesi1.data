@@ -2,13 +2,13 @@ Ldi R5,1A
 Ldi R6,05
 Ldi R7,04
 Mov R3,R5
-Mov R4,£¨R6£©
-dec X£¨R4£©
+Mov R4,(R6)
+dec X(R4)
 nop
-add R3,£¨R4£©
+add R3,(R4)
 sub R5,R6
-inc  @£¨R3£©+
-add  R7,£¨R6£©+
+inc  @(R3)+
+add  R7,(R6)+
 nop
 ld R1,05
 ld R2,04

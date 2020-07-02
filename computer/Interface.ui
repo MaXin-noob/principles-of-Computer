@@ -1054,6 +1054,10 @@ font: 18pt &quot;Arial&quot;;</string>
                 <height>381</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">font: italic 12pt &quot;Arial&quot;;
+font: 14pt &quot;Arial&quot;;</string>
+              </property>
              </widget>
             </item>
            </layout>

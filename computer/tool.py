@@ -7,7 +7,6 @@
 # @Time : 2020/6/14 11:51
 
 
-
 class ToolFunction:
     def __init__(self):
         pass
@@ -53,3 +52,16 @@ class ToolFunction:
             print("请检查文件路径已经文件扩展名是否正确！")
         else:
             return context
+
+    @staticmethod
+    def replace_char(string, char, index):
+        """
+        修改特定位置的字符
+        :param string: 原字符串
+        :param char: 修改后的字符
+        :param index: 要修改的位置
+        :return:
+        """
+        string = list(string)
+        string[index] = char
+        return ''.join(string)
