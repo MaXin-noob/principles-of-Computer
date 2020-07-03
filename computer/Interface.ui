@@ -1164,7 +1164,7 @@ font: 14pt &quot;Arial&quot;;</string>
              </size>
             </property>
             <property name="text">
-             <string>单周期执行</string>
+             <string>单命令执行</string>
             </property>
            </widget>
           </item>
@@ -1183,7 +1183,7 @@ font: 14pt &quot;Arial&quot;;</string>
              </size>
             </property>
             <property name="text">
-             <string>自律执行</string>
+             <string>自动执行</string>
             </property>
            </widget>
           </item>

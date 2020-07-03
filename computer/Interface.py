@@ -487,6 +487,6 @@ class Ui_MainWindow(object):
         self.label_21.setText(_translate("MainWindow", "微指令序列记录"))
         self.label_22.setText(_translate("MainWindow", "指令存储单元"))
         self.pushButton.setText(_translate("MainWindow", "打开文件"))
-        self.pushButton_2.setText(_translate("MainWindow", "单周期执行"))
-        self.pushButton_3.setText(_translate("MainWindow", "自律执行"))
+        self.pushButton_2.setText(_translate("MainWindow", "单命令执行"))
+        self.pushButton_3.setText(_translate("MainWindow", "自动执行"))
 import image_rc

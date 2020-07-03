@@ -54,14 +54,15 @@ class ToolFunction:
             return context
 
     @staticmethod
-    def replace_char(string, char, index):
+    def replace_char(string, char, *args):
         """
         修改特定位置的字符
         :param string: 原字符串
         :param char: 修改后的字符
-        :param index: 要修改的位置
+        :param *args: 要修改的位置,不定长参数
         :return:
         """
         string = list(string)
-        string[index] = char
+        for i in args:
+            string[i] = char
         return ''.join(string)
