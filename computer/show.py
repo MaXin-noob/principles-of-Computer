@@ -20,6 +20,7 @@ class MyWindow(QMainWindow):
         self.assembly_code = []  # 汇编代码
         self.machine_code = []  # 机器码
         self.the_number_of_clicks = 0  # 点击次数
+        self.file_code = []
         self.computer = main.CPU()
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.time_call_function)
@@ -30,6 +31,7 @@ class MyWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.open_file_success_click_button)
         self.ui.pushButton_2.clicked.connect(self.single_cycle_execution_click_button)
         self.ui.pushButton_3.clicked.connect(self.continuous_cycle_execution_click_button)
+        self.ui.pushButton_4.clicked.connect(self.save_file_success_click_button)
 
     def open_file_success_click_button(self):
         """
@@ -60,6 +62,7 @@ class MyWindow(QMainWindow):
         """
         try:
             note = self.computer.run(self.machine_code[self.the_number_of_clicks])
+            self.file_code += note
         except IndexError:
             self.ui.pushButton_2.setEnabled(False)
             self.ui.pushButton_3.setEnabled(False)
@@ -109,6 +112,7 @@ class MyWindow(QMainWindow):
     def time_call_function(self):
         try:
             note = self.computer.run(self.machine_code[self.the_number_of_clicks])
+            self.file_code += note
         except IndexError:
             self.ui.pushButton_2.setEnabled(False)
             self.ui.pushButton_3.setEnabled(False)
@@ -118,6 +122,13 @@ class MyWindow(QMainWindow):
             self.ui.listWidget_4.addItem(value)
         self.set_all_register()
         self.the_number_of_clicks += 1
+
+    def save_file_success_click_button(self):
+        filename = QFileDialog.getSaveFileName(self, '选择文件', './')
+        with open(filename[0], mode="w+", encoding="utf-8") as f:
+            for code in self.file_code:
+                f.writelines(code)
+                f.writelines("\n")
 
 
 if __name__ == "__main__":

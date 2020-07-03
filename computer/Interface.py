@@ -433,6 +433,11 @@ class Ui_MainWindow(object):
         self.pushButton_3.setMaximumSize(QtCore.QSize(101, 41))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_21.addWidget(self.pushButton_3)
+        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.setMinimumSize(QtCore.QSize(101, 41))
+        self.pushButton_4.setMaximumSize(QtCore.QSize(101, 41))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.horizontalLayout_21.addWidget(self.pushButton_4)
         self.verticalLayout_15.addLayout(self.horizontalLayout_21)
         self.horizontalLayout_23.addLayout(self.verticalLayout_15)
         self.horizontalLayout_24.addLayout(self.horizontalLayout_23)
@@ -489,4 +494,5 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "打开文件"))
         self.pushButton_2.setText(_translate("MainWindow", "单命令执行"))
         self.pushButton_3.setText(_translate("MainWindow", "自动执行"))
+        self.pushButton_4.setText(_translate("MainWindow", "导出文件"))
 import image_rc
