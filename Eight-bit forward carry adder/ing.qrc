@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="image">
+    <file>8bit.jpg</file>
+    <file>timg.jpg</file>
+  </qresource>
+</RCC>

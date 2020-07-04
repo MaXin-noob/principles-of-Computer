@@ -11,8 +11,8 @@ import untitled
 import sys
 from PyQt5.QtCore import Qt
 
-a = [0, 0, 0, 0, 0, 0, 0, 0]
-b = [0, 0, 0, 0, 0, 0, 0, 0]
+addend1 = [0, 0, 0, 0, 0, 0, 0, 0]
+addend2 = [0, 0, 0, 0, 0, 0, 0, 0]
 p = [0, 0, 0, 0, 0, 0, 0, 0]
 g = [0, 0, 0, 0, 0, 0, 0, 0]
 c = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -23,94 +23,84 @@ m = [0]
 class MyWindow(QMainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
+        self.text1_value = 0
+        self.text2_value = 0
         self.ui = untitled.Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.success_click_button)
 
     def success_click_button(self):
-        self.is_chick()
+        addend = self.get_addend()  # 获取文本内容
+        self.text1_value = int(addend[0])  # 转成整数类型
+        self.text2_value = int(addend[1])  # 转成整数类型
+        complement_1 = self.original_code_2_complement(self.true_2_original_code(self.text1_value))  # 求补码
+        self.ui.lineEdit_3.setText(complement_1+ "(补码)")
+        complement_2 = self.original_code_2_complement(self.true_2_original_code(self.text2_value))  # 求补码
+        self.ui.lineEdit_4.setText(complement_2 + "(补码)")
+        for key, value in enumerate(complement_1[::-1]):  # 存入列表
+            addend1[key] = int(value)
+        for key, value in enumerate(complement_2[::-1]):  # 存入列表
+            addend2[key] = int(value)
         self.progressive_calculate()
         self.local_calculate()
         self.carry_calculate()
         self.res_calculate()
+    def get_addend(self):
+        """
+        获取文本框内容
+        :return: 文本框内容
+        """
+        text_1 = self.ui.lineEdit.text()
+        text_2 = self.ui.lineEdit_2.text()
+        return [text_1, text_2]
 
-    def is_chick(self):
+    def original_code_2_complement(self, str_bin: str) -> str:
         """
-        判断多选框中的值
-        :return:无
+        原码转补码
+        :param str_bin:原码
+        :return:补码
         """
-        if self.ui.a0.isChecked():
-            a[0] = 1
+        str_new = ""
+        flag = True
+        if str_bin[0] == "0":
+            complement = str_bin
         else:
-            a[0] = 0
-        if self.ui.a1.isChecked():
-            a[1] = 1
+            for i in str_bin[1:]:
+                if i == "0":
+                    str_new += "1"
+                else:
+                    str_new += "0"
+            str_flash = '1' + str_new  # 反码
+            i = len(str_flash) - 1
+            while (flag):
+                if (str_flash[i] == '1'):
+                    i -= 1
+                elif (str_flash[i] == '0'):
+                    flag = False
+            complement = str_flash[0:i] + '1' + (len(str_flash) - i - 1) * '0'
+        return complement
+
+    def true_2_original_code(self, truth_value: int) -> str:
+        """
+        真值转原码
+        :param truth_value: 真值
+        :return: 原码
+        """
+        if truth_value > 0:
+            s = str(bin(truth_value))[2:]
+            s = "0" + "{0:0>7b}".format(int(s, 2))
         else:
-            a[1] = 0
-        if self.ui.a2.isChecked():
-            a[2] = 1
-        else:
-            a[2] = 0
-        if self.ui.a3.isChecked():
-            a[3] = 1
-        else:
-            a[3] = 0
-        if self.ui.a4.isChecked():
-            a[4] = 1
-        else:
-            a[4] = 0
-        if self.ui.a5.isChecked():
-            a[5] = 1
-        else:
-            a[5] = 0
-        if self.ui.a6.isChecked():
-            a[6] = 1
-        else:
-            a[6] = 0
-        if self.ui.a7.isChecked():
-            a[7] = 1
-        else:
-            a[7] = 0
-        if self.ui.b0.isChecked():
-            b[0] = 1
-        else:
-            b[0] = 0
-        if self.ui.b1.isChecked():
-            b[1] = 1
-        else:
-            b[1] = 0
-        if self.ui.b2.isChecked():
-            a[2] = 1
-        else:
-            b[2] = 0
-        if self.ui.b3.isChecked():
-            b[3] = 1
-        else:
-            b[3] = 0
-        if self.ui.b4.isChecked():
-            b[4] = 1
-        else:
-            b[4] = 0
-        if self.ui.b5.isChecked():
-            b[5] = 1
-        else:
-            b[5] = 0
-        if self.ui.b6.isChecked():
-            b[6] = 1
-        else:
-            b[6] = 0
-        if self.ui.b7.isChecked():
-            b[7] = 1
-        else:
-            b[7] = 0
+            s = str(bin(truth_value))[3:]
+            s = "1" + "{0:0>7b}".format(int(s, 2))
+        return s
 
     def progressive_calculate(self):
         """
-        计算递进位并传参
+        计算递进位并展示
         :return: 无
         """
         for key in range(len(p)):
-            p[key] = a[key] ^ b[key]
+            p[key] = addend1[key] ^ addend2[key]
         self.ui.lineEdit_p0.setText(str(p[0]))
         self.ui.lineEdit_p1.setText(str(p[1]))
         self.ui.lineEdit_p2.setText(str(p[2]))
@@ -121,8 +111,12 @@ class MyWindow(QMainWindow):
         self.ui.lineEdit_p7.setText(str(p[7]))
 
     def local_calculate(self):
+        """
+        计算本地进位并展示
+        :return:
+        """
         for key in range(len(g)):
-            g[key] = a[key] & b[key]
+            g[key] = addend1[key] & addend2[key]
         self.ui.lineEdit_g0.setText(str(g[0]))
         self.ui.lineEdit_g1.setText(str(g[1]))
         self.ui.lineEdit_g2.setText(str(g[2]))
@@ -133,6 +127,10 @@ class MyWindow(QMainWindow):
         self.ui.lineEdit_g7.setText(str(g[7]))
 
     def carry_calculate(self):
+        """
+        计算是否进位并展示
+        :return:
+        """
         c[0] = g[0] | p[0] & m[0];
         c[1] = g[1] | p[1] & g[0] | p[1] & p[0] & m[0];
         c[2] = g[2] | p[2] & g[1] | p[2] & p[1] & g[0] | p[2] & p[1] & p[0] & m[0];
@@ -157,46 +155,69 @@ class MyWindow(QMainWindow):
         self.ui.c7.setChecked(c[7])
 
     def res_calculate(self):
+        """
+        计算结果
+        :return:
+        """
         res = ''
-        s[0] = (a[0] ^ b[0]) ^ m[0];
-        s[1] = (a[1] ^ b[1]) ^ ((a[0] & b[0]) | (a[0] ^ b[0]) & m[0]);
-        s[2] = (a[2] ^ b[2]) ^ ((a[1] & b[1]) | (a[1] ^ b[1]) & (a[0] & b[0]) | (a[1] ^ b[1]) & (a[0] & b[0]) & m[0]);
-        s[3] = (a[3] ^ b[3]) ^ (
-                (a[2] & b[2]) | (a[2] ^ b[2]) & (a[1] & b[1]) | (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] & b[0]) | (
-                a[2] ^ b[2]) & (a[1] ^ b[1]) & (
-                        a[0] & b[0]) & m[0]);
-        s[4] = (a[4] ^ b[4]) ^ (
-                (a[3] & b[3]) | (a[3] ^ b[3]) & (a[2] & b[2]) | (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] & b[1]) | (
-                a[3] ^ b[3]) & (a[2] ^ b[2]) & (
-                        a[1] ^ b[1]) & (a[0] & b[0]) | (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] ^ b[0]) &
+        s[0] = (addend1[0] ^ addend2[0]) ^ m[0];
+        s[1] = (addend1[1] ^ addend2[1]) ^ ((addend1[0] & addend2[0]) | (addend1[0] ^ addend2[0]) & m[0]);
+        s[2] = (addend1[2] ^ addend2[2]) ^ (
+                (addend1[1] & addend2[1]) | (addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) | (
+                addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) & m[0]);
+        s[3] = (addend1[3] ^ addend2[3]) ^ (
+                (addend1[2] & addend2[2]) | (addend1[2] ^ addend2[2]) & (addend1[1] & addend2[1]) | (
+                addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) | (
+                        addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (
+                        addend1[0] & addend2[0]) & m[0]);
+        s[4] = (addend1[4] ^ addend2[4]) ^ (
+                (addend1[3] & addend2[3]) | (addend1[3] ^ addend2[3]) & (addend1[2] & addend2[2]) | (
+                addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (addend1[1] & addend2[1]) | (
+                        addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (
+                        addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) | (addend1[3] ^ addend2[3]) & (
+                        addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (addend1[0] ^ addend2[0]) &
                 m[0]);
-        s[5] = (a[5] ^ b[5]) ^ (
-                (a[4] & b[4]) | (a[4] ^ b[4]) & (a[3] & b[3]) | (a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] & b[2]) | (
-                a[4] ^ b[4]) & (a[3] ^ b[3]) & (
-                        a[2] ^ b[2]) & (a[1] & b[1]) | (a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (
-                        a[0] & b[0]) | (a[4] ^ b[4]) & (
-                        a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] ^ b[0]) & m[0]);
-        s[6] = (a[6] ^ b[6]) ^ (
-                (a[5] & b[5]) | (a[5] ^ b[5]) & (a[4] & b[4]) | (a[5] ^ b[5]) & (a[4] ^ b[4]) & (a[3] & b[3]) | (
-                a[5] ^ b[5]) & (a[4] ^ b[4]) & (
-                        a[3] ^ b[3]) & (a[2] & b[2]) | (a[5] ^ b[5]) & (a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (
-                        a[1] & b[1]) | (a[5] ^ b[5]) & (
-                        a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] & b[0]) | (a[5] ^ b[5]) & (
-                        a[4] ^ b[4]) & (
-                        a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] ^ b[0]) & m[0]);
-        s[7] = (a[7] ^ b[7]) ^ (
-                (a[6] & b[6]) | (a[6] ^ b[6]) & (a[5] & b[5]) | (a[6] ^ b[6]) & (a[5] ^ b[5]) & (a[4] & b[4]) | (
-                a[6] ^ b[6]) & (a[5] ^ b[5]) & (
-                        a[4] ^ b[4]) & (a[3] & b[3]) | (a[6] ^ b[6]) & (a[5] ^ b[5]) & (a[4] ^ b[4]) & (a[3] ^ b[3]) & (
-                        a[2] & b[2]) | (a[6] ^ b[6]) & (
-                        a[5] ^ b[5]) & (a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] & b[1]) | (a[6] ^ b[6]) & (
-                        a[5] ^ b[5]) & (
-                        a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] & b[0]) | (a[6] ^ b[6]) & (
-                        a[5] ^ b[5]) & (
-                        a[4] ^ b[4]) & (a[3] ^ b[3]) & (a[2] ^ b[2]) & (a[1] ^ b[1]) & (a[0] ^ b[0]) & m[0]);
+        s[5] = (addend1[5] ^ addend2[5]) ^ (
+                (addend1[4] & addend2[4]) | (addend1[4] ^ addend2[4]) & (addend1[3] & addend2[3]) | (
+                addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (addend1[2] & addend2[2]) | (
+                        addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (
+                        addend1[2] ^ addend2[2]) & (addend1[1] & addend2[1]) | (addend1[4] ^ addend2[4]) & (
+                        addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (
+                        addend1[0] & addend2[0]) | (addend1[4] ^ addend2[4]) & (
+                        addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (
+                        addend1[0] ^ addend2[0]) & m[0]);
+        s[6] = (addend1[6] ^ addend2[6]) ^ (
+                (addend1[5] & addend2[5]) | (addend1[5] ^ addend2[5]) & (addend1[4] & addend2[4]) | (
+                addend1[5] ^ addend2[5]) & (addend1[4] ^ addend2[4]) & (addend1[3] & addend2[3]) | (
+                        addend1[5] ^ addend2[5]) & (addend1[4] ^ addend2[4]) & (
+                        addend1[3] ^ addend2[3]) & (addend1[2] & addend2[2]) | (addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (
+                        addend1[1] & addend2[1]) | (addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (
+                        addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) | (addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (
+                        addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (addend1[1] ^ addend2[1]) & (
+                        addend1[0] ^ addend2[0]) & m[0]);
+        s[7] = (addend1[7] ^ addend2[7]) ^ (
+                (addend1[6] & addend2[6]) | (addend1[6] ^ addend2[6]) & (addend1[5] & addend2[5]) | (
+                addend1[6] ^ addend2[6]) & (addend1[5] ^ addend2[5]) & (addend1[4] & addend2[4]) | (
+                        addend1[6] ^ addend2[6]) & (addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (addend1[3] & addend2[3]) | (addend1[6] ^ addend2[6]) & (
+                        addend1[5] ^ addend2[5]) & (addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (
+                        addend1[2] & addend2[2]) | (addend1[6] ^ addend2[6]) & (
+                        addend1[5] ^ addend2[5]) & (addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (
+                        addend1[2] ^ addend2[2]) & (addend1[1] & addend2[1]) | (addend1[6] ^ addend2[6]) & (
+                        addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (
+                        addend1[1] ^ addend2[1]) & (addend1[0] & addend2[0]) | (addend1[6] ^ addend2[6]) & (
+                        addend1[5] ^ addend2[5]) & (
+                        addend1[4] ^ addend2[4]) & (addend1[3] ^ addend2[3]) & (addend1[2] ^ addend2[2]) & (
+                        addend1[1] ^ addend2[1]) & (addend1[0] ^ addend2[0]) & m[0]);
         for i in s[::-1]:
             res += str(i)
-        self.ui.lineEdit_result.setText(res)
+        res = self.original_code_2_complement(res)
+        add = self.text1_value+self.text2_value
+        self.ui.lineEdit_result.setText(res + "（真值：%d）"%add)
 
 
 if __name__ == "__main__":

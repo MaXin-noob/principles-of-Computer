@@ -11,7 +11,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 import Interface
 import main
 from tool import ToolFunction
-import time
 
 
 class MyWindow(QMainWindow):

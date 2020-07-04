@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>762</width>
-    <height>694</height>
+    <width>955</width>
+    <height>837</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,1062 +17,1094 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>422</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="styleSheet">
-        <string notr="true">font: 25 14pt &quot;Bahnschrift Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>输入数据</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="styleSheet">
-            <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-           </property>
-           <property name="text">
-            <string>加数1</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QCheckBox" name="a7">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a7</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a6">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a6</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a5">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a5</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a4">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a4</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a3">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a3</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a2">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a2</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a1">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a1</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="a0">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>a0</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="styleSheet">
-            <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-           </property>
-           <property name="text">
-            <string>加数2</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <item>
-            <widget class="QCheckBox" name="b7">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b7</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b6">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b6</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b5">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b5</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b4">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b4</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b3">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b3</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b2">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b2</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b1">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b1</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="b0">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>b0</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>560</y>
-      <width>181</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>开始计算</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>720</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>华北理工大学--马昕</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>2</x>
-      <y>263</y>
-      <width>294</width>
-      <height>47</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_8">
-       <property name="styleSheet">
-        <string notr="true">font: 25 11pt &quot;Bahnschrift Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>本地进位</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_18">
-       <item>
-        <widget class="QLabel" name="label_17">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g7</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g7">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_17">
-       <item>
-        <widget class="QLabel" name="label_18">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g6</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g6">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_16">
-       <item>
-        <widget class="QLabel" name="label_19">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g5</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g5">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_15">
-       <item>
-        <widget class="QLabel" name="label_20">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g4</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g4">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_14">
-       <item>
-        <widget class="QLabel" name="label_21">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g3</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_13">
-       <item>
-        <widget class="QLabel" name="label_22">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_12">
-       <item>
-        <widget class="QLabel" name="label_23">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_11">
-       <item>
-        <widget class="QLabel" name="label_24">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>g0</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_g0">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>2</x>
-      <y>208</y>
-      <width>294</width>
-      <height>47</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="styleSheet">
-        <string notr="true">font: 25 11pt &quot;Bahnschrift Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>传递进位</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_9">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p7</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p7">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QLabel" name="label_10">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p6</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p6">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QLabel" name="label_11">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p5</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p5">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
-       <item>
-        <widget class="QLabel" name="label_12">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p4</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p4">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <widget class="QLabel" name="label_13">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p3</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_8">
-       <item>
-        <widget class="QLabel" name="label_14">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_9">
-       <item>
-        <widget class="QLabel" name="label_15">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_10">
-       <item>
-        <widget class="QLabel" name="label_16">
-         <property name="maximumSize">
-          <size>
-           <width>16</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>p0</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_p0">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>21</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>1</x>
-      <y>151</y>
-      <width>432</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_19">
-     <item>
-      <widget class="QLabel" name="label_25">
-       <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-       </property>
-       <property name="text">
-        <string>过程信息显示</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="styleSheet">
-          <string notr="true">font: 11pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>是否进位</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c7">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c7</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c6">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c6</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c5">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c5</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c4">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c4</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c3</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="c0">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 12pt &quot;Arial&quot;;</string>
-         </property>
-         <property name="text">
-          <string>c0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>370</y>
-      <width>433</width>
-      <height>142</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_20">
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="styleSheet">
-        <string notr="true">font: 25 14pt &quot;Bahnschrift Light&quot;;</string>
-       </property>
-       <property name="text">
-        <string>结果显示</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit_result">
-       <property name="minimumSize">
-        <size>
-         <width>431</width>
-         <height>111</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>431</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 36pt &quot;Bahnschrift SemiLight Condensed&quot;;
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_27">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_26">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_25">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_24">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_23">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_8">
+                  <item>
+                   <widget class="QLabel" name="label_26">
+                    <property name="minimumSize">
+                     <size>
+                      <width>54</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>54</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>加数1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit">
+                    <property name="minimumSize">
+                     <size>
+                      <width>131</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>131</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: italic 14pt &quot;Arial&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_3">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>201</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>201</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;Arial&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_27">
+                    <property name="minimumSize">
+                     <size>
+                      <width>54</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>54</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>加数2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>131</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>131</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: italic 14pt &quot;Arial&quot;;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_4">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>201</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>201</width>
+                      <height>41</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: 75 14pt &quot;Arial&quot;;</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_22">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                  <item>
+                   <widget class="QLabel" name="label_25">
+                    <property name="styleSheet">
+                     <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                    </property>
+                    <property name="text">
+                     <string>过程信息显示</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLabel" name="label_5">
+                      <property name="styleSheet">
+                       <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>是否进位</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c7">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c7</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c6">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c6</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c5">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c5</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c4">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c4</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c3">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c3</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c2">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c2</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c1">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c1</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QCheckBox" name="c0">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 12pt &quot;Arial&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>c0</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_19">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <item>
+                     <widget class="QLabel" name="label_7">
+                      <property name="styleSheet">
+                       <string notr="true">font: 25 11pt &quot;Bahnschrift Light&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>传递进位</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_2">
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_3">
+                        <item>
+                         <widget class="QLabel" name="label_9">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p7</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p7">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_4">
+                        <item>
+                         <widget class="QLabel" name="label_10">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p6</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p6">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_5">
+                        <item>
+                         <widget class="QLabel" name="label_11">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p5</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p5">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_9">
+                        <item>
+                         <widget class="QLabel" name="label_12">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p4</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p4">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_8">
+                        <item>
+                         <widget class="QLabel" name="label_13">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p3</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p3">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_7">
+                        <item>
+                         <widget class="QLabel" name="label_14">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p2</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p2">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_6">
+                        <item>
+                         <widget class="QLabel" name="label_15">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p1</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p1">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout">
+                        <item>
+                         <widget class="QLabel" name="label_16">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>p0</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_p0">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <item>
+                     <widget class="QLabel" name="label_8">
+                      <property name="styleSheet">
+                       <string notr="true">font: 25 11pt &quot;Bahnschrift Light&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>本地进位</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout">
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_2">
+                        <item>
+                         <widget class="QLabel" name="label_17">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g7</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g7">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_17">
+                        <item>
+                         <widget class="QLabel" name="label_18">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g6</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g6">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_16">
+                        <item>
+                         <widget class="QLabel" name="label_19">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g5</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g5">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_10">
+                        <item>
+                         <widget class="QLabel" name="label_20">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g4</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g4">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_11">
+                        <item>
+                         <widget class="QLabel" name="label_21">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g3</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g3">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_12">
+                        <item>
+                         <widget class="QLabel" name="label_22">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g2</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g2">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_13">
+                        <item>
+                         <widget class="QLabel" name="label_23">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g1</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g1">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_14">
+                        <item>
+                         <widget class="QLabel" name="label_24">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Arial&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>g0</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_g0">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>21</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>0</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>431</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>431</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 25 14pt &quot;Bahnschrift Light&quot;;</string>
+                </property>
+                <property name="text">
+                 <string>显示器</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_result">
+                <property name="minimumSize">
+                 <size>
+                  <width>431</width>
+                  <height>111</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>431</width>
+                  <height>111</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 36pt &quot;Bahnschrift SemiLight Condensed&quot;;
 </string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="minimumSize">
+               <size>
+                <width>181</width>
+                <height>71</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>181</width>
+                <height>71</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>开始计算</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>381</width>
+            <height>211</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>381</width>
+            <height>211</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">image: url(:/image/timg.jpg);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_28">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_29">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="minimumSize">
+             <size>
+              <width>441</width>
+              <height>491</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>441</width>
+              <height>491</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/image/8bit.jpg);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="minimumSize">
+             <size>
+              <width>431</width>
+              <height>231</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>431</width>
+              <height>231</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;程序功能如下：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;1.输入10进制真值自动转化为补码并显示&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;2.根据补码进行加法运算&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;3.显示中间过程&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#ff0000;&quot;&gt;注意事项：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;1.输入真值的范围为 -128至128&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="minimumSize">
+           <size>
+            <width>441</width>
+            <height>41</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>441</width>
+            <height>41</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;作者：华北理工大学-----马昕&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="ing.qrc"/>
+ </resources>
  <connections/>
 </ui>

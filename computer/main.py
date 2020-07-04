@@ -37,7 +37,6 @@ class CPU(Hardware):
             "LD": "1001xxxxxxxx1ddd",
         }
         # 控存
-        # TODO：控存尚未写完，大部分指令没有加测试判断以及下址，没有 # 符号的都没设计完成
         self.control_memory = {
             "000": {
                 "micros": "000101101000000001101000001",  #
@@ -143,7 +142,6 @@ class CPU(Hardware):
                     code = code.replace("xxxxxxxx", '{:0>8b}'.format(int(context[2], 16)))
                     context_.append(code)
                 elif context[0] == "MOV" or context[0] == "SUB" or context[0] == "ADD" or context[0] == "AND":
-                    # 判断寻址方式，暂时只判断寄存器寻址，寄存器间址，自增型寄存器间址,尚未判断自增型双间址
                     # 寄存器间址
                     if "(" in context[2]:  # 源操作数寻址方式
                         code = ToolFunction.replace_char(code, "1", 6)
@@ -298,7 +296,7 @@ class CPU(Hardware):
 
     def set_register_value(self, source_operand, value):
         """
-        设置对应寄存器的值,适用于LDI和MOV指令
+        设置对应寄存器的值
         :param source_operand: 寄存器编号（字符串形式）
         :param value: 需要设置的值
         :return:
